@@ -1,0 +1,37 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "should":
+            [
+              {"match": {"name": "jefferson.silva@ingresse.com"}},
+              {"match_phrase": {"email": "jefferson.silva@ingresse.com"}}
+            ]
+          }
+        }
+      ],
+      "should":
+      [
+        {
+          "match_phrase":
+          {
+            "friends.name": {
+              "query": "hugo",
+              "boost": 2
+            }
+          }
+        }
+      ]
+    }
+  },
+  "highlight": {
+    "fields": {
+      "name": {},
+      "email":{},
+      "friends.name": {}
+    }
+  }
+}
+

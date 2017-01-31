@@ -1,0 +1,4 @@
+{
+  "elasticHost": "http://localhost:9201",
+  "docName": "users"
+}
